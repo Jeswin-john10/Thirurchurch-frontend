@@ -90,7 +90,7 @@ function Home() {
                                 <input onChange={(e) => setUserData({ ...userData, date: e.target.value })} value={userData.date} className='p-2 rounded w-50' type="date" placeholder='Mobile Number' />
                             </div>
                             <div className='mt-2'>
-                                <input onChange={(e) => setUserData({ ...userData, amount: e.target.value })} value={userData.amount} className='p-2 rounded w-50' type="text" placeholder='Amount' />
+                                <input onChange={(e) => setUserData({ ...userData, amount: e.target.value })} value={userData.amount} className='p-2 rounded w-50' type="number" placeholder='Amount' />
                             </div>
                             <div className='text-center mt-3'>
                                 <button onClick={handleadd} className='btn bg-primary border p-2 rounded shadow text-light me-5'>Submit</button>
