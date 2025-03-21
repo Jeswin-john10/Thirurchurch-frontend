@@ -1,1 +1,1 @@
-export const serverurl="https://thirurchurch-server.onrender.com"
+export const serverurl="https://thirurchurch-server-1.onrender.com"
