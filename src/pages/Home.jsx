@@ -11,6 +11,8 @@ function Home() {
         setUserData({
              name: "", unitname: "", housename: "", mobileno: "", receiptno: "", amount: "", date: "",registeredid:""
         })
+        setUserId("")
+      
    }
 
     //  add new data

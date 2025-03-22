@@ -14,7 +14,24 @@ function Admin() {
   const [registerNumberFrom, setRegisterNumberFrom] = useState("");
   const [registerNumberTo, setRegisterNumberTo] = useState("");
   const[id , setId]=useState("")
-  
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
+
+
+  const handleSort = (key) => {
+    let direction = "asc";
+    if (sortConfig.key === key && sortConfig.direction === "asc") {
+      direction = "desc";
+    }
+
+    const sortedData = [...filteredData].sort((a, b) => {
+      if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
+      if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
+      return 0;
+    });
+
+    setSortConfig({ key, direction });
+    setFilteredData(sortedData);
+  };
 // search button
 
 const handleSearch = (e) => {
@@ -208,14 +225,14 @@ const handleclear =()=>{
             <thead>
               <tr>
                 <th className='bg-primary' scope="col">#</th>
-                <th className='bg-primary'scope="col">Receipt No</th>
-                <th className='bg-primary'scope="col">Registered Id</th>
-                <th className='bg-primary'scope="col">Date</th>
-                <th className='bg-primary'scope="col">Full Name</th>
-                <th className='bg-primary'scope="col">House Name</th>
-                <th className='bg-primary'scope="col">Unit Name</th>
-                <th className='bg-primary'scope="col">Mobile No</th>
-                <th className='bg-primary'scope="col">Amount</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("receiptno")}>Receipt No</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("registeredid")}>Registered Id</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("date")}>Date</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("name")}>Full Name</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("housename")}>House Name</th>
+                <th className='bg-primary'scope="col" onClick={() => handleSort("unitname")}>Unit Name</th>
+                <th className='bg-primary'scope="col"  onClick={() => handleSort("mobileno")}>Mobile No</th>
+                <th className='bg-primary'scope="col"  onClick={() => handleSort("amount")}>Amount</th>
                 <th className='bg-danger '>Total Amount <br></br><span className='bg-light rounded p-1 border-success text-bold '>
   {totalAmount}
 </span></th>
