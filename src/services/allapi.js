@@ -12,7 +12,6 @@ export const getdata=async()=>{
 }
 
 //add
-
 export const addnewdata=async(reqBody)=>{
     return await commonapi('POST',`${serverurl}/churchdata`,reqBody)
 }

@@ -67,7 +67,6 @@ const registerNumberMatch =
   setFilteredData(filtered);
 };
 
-
 //handle clear
 const handleclear =()=>{
   setFromDate(""),
@@ -77,10 +76,6 @@ const handleclear =()=>{
   setRegisterNumberTo("")
   setId("")
 }
-
-
-
- 
 
   //get data
   const getdataform = async () => {
@@ -112,13 +107,9 @@ const handleclear =()=>{
   };
   return (
     <div style={{paddingTop:"85px"}}>
+
       {/* login */}
     
-
-
-
-
-
         <div className='border p-3 rounded shadow'>
           <div className='row mt-2' >
 
