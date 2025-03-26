@@ -33,7 +33,7 @@ function Home() {
     const handlesearch = async () => {
         if (!userId) return toast.info("Please Enter An Id");
         try {
-            const response = await fetch(`http://localhost:4000/churchdata/${userId}`);
+            const response = await fetch(`https://thirurchurch-server-2.onrender.com/churchdata/${userId}`);
             if (!response.ok) {
                 setUserData({ name: "", unitname: "", housename: "", mobileno: "", receiptno: "" ,registeredid:""}); // Reset fields if not found
                 return toast.warning("User Not Found");
